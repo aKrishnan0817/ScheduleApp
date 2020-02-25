@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content%}
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-4 register-screen">
+    <h1 class="screen-tite">Login</h1>
+    <form class="" action="" method="POST,GET">
+      <div class="form-group">
+
+        {%if form.username.errors %}
+            {{form.username(class="form-control form-control-lg is-invalid input",placeholder="username")}}
+            <div class="invalid-feedback">
+              {% for errors in form.username.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{form.username(class="form-control form-control-lg input",placeholder="username")}}
+          {% endif %}
+      </div>
+      <div class="form-group">
+
+        {%if form.email.errors %}
+            {{form.email(class="form-control form-control-lg is-invalid input",placeholder="email")}}
+            <div class="invalid-feedback">
+              {% for errors in form.email.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{form.email(class="form-control form-control-lg input",placeholder="email")}}
+          {% endif %}
+      </div>
+      <div class="form-group">
+
+        {%if form.password.errors %}
+            {{form.password(class="form-control form-control-lg is-invalid input",placeholder="password")}}
+            <div class="invalid-feedback">
+              {% for errors in form.password.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{form.password(class="form-control form-control-lg input",placeholder="password")}}
+          {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.submit(class="btn btn-outlin-info")}}
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h6>Don't have an account? <a href="{{ url_for('register') }}">Sign up!<a></h6>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content%}
