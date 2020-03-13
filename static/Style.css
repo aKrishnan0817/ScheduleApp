@@ -16,12 +16,14 @@ ul {
   padding: 0;
   overflow: hidden;
 }
-
+.sch{  
+  color: black;
+  border-radius: 2px ;
+}
 .menuBar{
   background-color: #FFF;
   border-radius: 10px;
 }
-
 .navBarBtn {
   float: left;
   padding: 17px 20px;
@@ -31,13 +33,10 @@ ul {
   color: black;
   border-radius: 10px;
 }
-
 .navBarBtn:hover {
   background-color: #b3b3b3;
   border: 1.5px solid black;
 }
-
-
 div.border > div{
   border: 1px solid black;
   text-align: center;

@@ -5,14 +5,14 @@ from wtforms.validators import Length, DataRequired, Email, EqualTo
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username',validators=[Length(min=4,max=24),DataRequired()])
-    email = StringField('Email', validators=[DataRequired(),Email()])
-    password = PasswordField('Password',validators=[DataRequired(),Length(min=2,max=32)])
-    confirm_password = PasswordField('Confirm Password',validators=[DataRequired(),Length(min=2,max=32),EqualTo('password')])
+    email = StringField('Email', validators=[DataRequired(),Email(), Length(min=4,max=50)])
+    password = PasswordField('Password',validators=[DataRequired(),Length(min=4,max=60)])
+    confirm_password = PasswordField('Confirm Password',validators=[DataRequired(),Length(min=4,max=60),EqualTo('password')])
     submit = SubmitField('Sign up')
 class LoginForm(FlaskForm):
     username = StringField('Username',validators=[Length(min=4,max=24),DataRequired()])
-    password = PasswordField('Password',validators=[DataRequired()])
-    email = StringField('Email', validators=[DataRequired(),Email()])
+    password = PasswordField('Password',validators=[DataRequired(),Length(min=4,max=60)])
+    email = StringField('Email', validators=[DataRequired(),Email(), Length(min=4,max=50)])
     remeber = BooleanField('Remeber Me')
     submit = SubmitField('Login')
 class ScheduleMakerForm(FlaskForm):
